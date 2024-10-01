@@ -33,7 +33,7 @@ To develop a fully functional REST API that includes:
 - **Image Uploading**: Handle media files for recipe images.
 - **Unit Testing**: All major functionalities are covered by unit tests.
 
-## Key Learning Points
+## Key Points
 
 - Setting up a project with **Docker** and **Docker-Compose** for development and production environments.
 - Configuring **GitHub Actions** for Continuous Integration (CI), including linting and running unit tests automatically.
