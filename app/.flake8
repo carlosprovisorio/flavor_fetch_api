@@ -1,0 +1,7 @@
+[flake8]  # This section header indicates that the following lines contain configuration settings for flake8.
+
+exclude =  # This specifies directories and files that flake8 should ignore when checking for code style violations.
+  migrations,  # Ignore all the 'migrations' directories, which usually contain auto-generated Django files.
+  __pycache__,  # Ignore all '__pycache__' directories, which contain compiled Python files.
+  manage.py,  # Ignore 'manage.py', the main Django management script, which is usually not checked for style.
+  settings.py  # Ignore 'settings.py', the Django project settings file, which may contain many configuration details not subject to flake8 rules.

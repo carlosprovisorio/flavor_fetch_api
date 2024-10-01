@@ -1,0 +1,2 @@
+Django>=3.2.4,<3.3  # Specifies that the Django version should be at least 3.2.4, but less than 3.3. This allows for updates within the 3.2.x series while avoiding breaking changes introduced in 3.3.
+djangorestframework>=3.12.4,<3.13  # Specifies that Django REST framework version should be at least 3.12.4, but less than 3.13. This allows for updates within the 3.12.x series while avoiding breaking changes introduced in 3.13.

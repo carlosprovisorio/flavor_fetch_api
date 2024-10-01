@@ -1,0 +1,14 @@
+services:
+  app:  # Defines a service called 'app', which represents your application container.
+    build:
+      context: .  # The build context is the current directory, where the Dockerfile is located.
+      args:
+        - DEV=true  # Passes the build argument 'DEV=true' to the Dockerfile, which can be used to control behavior based on whether it's a development environment.
+    ports:
+      - "8000:8000"  # Maps port 8000 on the host machine to port 8000 in the container, allowing access to the Django app on http://localhost:8000.
+    volumes:
+      - ./app:/app  # Mounts the local './app' directory to '/app' in the container, enabling live syncing between local files and the container.
+    command:  # The command to run when starting the container.
+      - sh  # Specifies to use the 'sh' shell for executing commands.
+      - -c  # Tells 'sh' to execute the following string as a command.
+      - "python manage.py runserver 0.0.0.0:8000"  # Runs the Django development server, making it accessible externally on port 8000 by binding to 0.0.0.0.

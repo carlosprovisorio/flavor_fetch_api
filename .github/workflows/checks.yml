@@ -1,0 +1,25 @@
+---
+name: Checks # Defines the name of the workflow, which will show in the GitHub Actions interface as "Checks".
+
+on: [push] # Specifies that this workflow should be triggered when there is a push event to the repository (any branch).
+
+jobs:
+  test-lint: # Defines a job called "test-lint" that will run both tests and linting.
+    name: Test and Lint # A human-readable name for the job that will show up in the GitHub Actions interface.
+    runs-on: ubuntu-20.04 # Specifies the environment (an Ubuntu 20.04 virtual machine) where the job will run.
+
+    steps:
+      - name: Login to Docker Hub # A step that logs into Docker Hub to pull/push Docker images as part of the job.
+        uses: docker/login-action@v1 # Uses the official Docker login action from the GitHub Actions marketplace.
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }} # Specifies the Docker Hub username stored as a GitHub secret.
+          password: ${{ secrets.DOCKERHUB_TOKEN }} # Specifies the Docker Hub password or access token, also stored as a GitHub secret.
+
+      - name: Checkout # A step to check out the repository code so that it can be accessed by the job.
+        uses: actions/checkout@v2 # Uses the official GitHub Action to check out the repository code at the latest commit.
+
+      - name: Test # A step to run the unit tests inside the container.
+        run: docker compose run --rm app sh -c "python manage.py test" # Runs the Django unit tests inside the 'app' service container using Docker Compose.
+
+      - name: Lint # A step to run the linting process for code quality.
+        run: docker compose run --rm app sh -c "flake8" # Runs the `flake8` command inside the 'app' service container to check for Python code style issues.
