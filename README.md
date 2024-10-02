@@ -1,12 +1,10 @@
-# flavor_fetch_api
-
-# Recipe REST API
+# Recipe REST API - # flavor_fetch_api
 
 This project is a backend REST API built using **Python**, **Django (3.2)**, **Django REST Framework (3.12)**, **Docker**, and **Postgres**, following **Test Driven Development (TDD)** principles. The API allows users to manage recipes, including features like filtering, uploading images, and more.
 
 ## Features
 
-The goal of this project is to create a recipe management system with functionalities such as:
+The goal of this project is to create a recipe management system that can be leveraged by both web and mobile applications, offering functionalities such as:
 
 - **User Authentication**: Secure sign-up and login functionality for users.
 - **Recipe Management**: Add recipes with titles, price points, cooking times, ingredients, and tags such as “comfort food”, “vegan”, or “dessert”.
