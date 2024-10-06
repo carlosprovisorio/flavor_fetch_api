@@ -1,5 +1,8 @@
 [flake8]  # This section header indicates that the following lines contain configuration settings for flake8.
 
+max-line-length = 100
+
+
 exclude =  # This specifies directories and files that flake8 should ignore when checking for code style violations.
   migrations,  # Ignore all the 'migrations' directories, which usually contain auto-generated Django files.
   __pycache__,  # Ignore all '__pycache__' directories, which contain compiled Python files.
