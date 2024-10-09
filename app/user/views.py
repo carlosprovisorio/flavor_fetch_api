@@ -1,6 +1,7 @@
-"""Views for the user API."""
+"""
+Views for the user API.
+"""
 
-from app.user import serializers
 from rest_framework import generics
 
 from user.serializers import UserSerializer
