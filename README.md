@@ -18,7 +18,7 @@ The goal of this project is to create a recipe management system that can be lev
 - **Django & Django REST Framework**
 - **Docker & Docker-Compose**
 - **PostgreSQL**
-- **GitHub Actions** for CI/CD
+- **GitHub Actions** Automation tool (Code linting and Unit Tests) (not covering deployment)
 - **Test Driven Development (TDD)** using Django's test framework
 
 ## Objectives
