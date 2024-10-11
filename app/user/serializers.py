@@ -28,7 +28,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class AuthTokenSerializer(serializers.Serializer):
-    """Serializer for hte user auth token."""
+    """Serializer for the user auth token."""
 
     email = serializers.EmailField()
     password = serializers.CharField(
