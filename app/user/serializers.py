@@ -8,7 +8,6 @@ from django.contrib.auth import (
 )
 
 from django.utils.translation import gettext as _
-from numpy import save
 
 from rest_framework import serializers
 
