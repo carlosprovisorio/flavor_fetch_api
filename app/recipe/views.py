@@ -9,14 +9,6 @@ model instances to JSON format and vice versa.
 Classes:
     RecipeViewSet: A viewset that provides the standard actions for the Recipe model.
 
-Functions:
-    list: Retrieves a list of all recipes.
-    create: Creates a new recipe.
-    retrieve: Retrieves a specific recipe by its ID.
-    update: Updates an existing recipe.
-    partial_update: Partially updates an existing recipe.
-    destroy: Deletes a specific recipe by its ID.
-
 Attributes:
     queryset: The base queryset for retrieving recipes.
     serializer_class: The serializer class used for converting Recipe instances.
@@ -61,7 +53,11 @@ class RecipeViewSet(viewsets.ModelViewSet):
         serializer.save(user=self.request.user)
 
 
-class TagViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+class TagViewSet(
+    mixins.UpdateModelMixin,
+    mixins.ListModelMixin,
+    viewsets.GenericViewSet,
+):
     """Manage tags in the database."""
 
     serializer_class = serializers.TagSerializer
