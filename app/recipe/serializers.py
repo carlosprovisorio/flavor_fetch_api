@@ -22,7 +22,10 @@ and proper formatting.
 
 from rest_framework import serializers
 
-from core.models import Recipe, Tag
+from core.models import (
+    Recipe,
+    Tag,
+)
 
 
 class RecipeSerializer(serializers.ModelSerializer):
