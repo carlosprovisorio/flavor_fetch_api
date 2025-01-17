@@ -75,7 +75,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
             ingredient_ids = self._params_to_ints(ingredients)
             queryset = queryset.filter(ingredients__id__in=ingredient_ids)
 
-        return queryset.filter(user=self.request.user).order_by("-id").distinct
+        return queryset.filter(user=self.request.user).order_by("-id").distinct()
 
     def get_serializer_class(self):
         """Return the serializer class for request."""
