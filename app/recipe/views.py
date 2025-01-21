@@ -128,7 +128,12 @@ class BaseRecipeAttrViewSet(
 
     def get_queryset(self):
         """Filter queryset to authenticated user."""
-        return self.queryset.filter(user=self.request.user).order_by("-name")
+        assigned_only = bool(int(self.request.query_params.get("assigned_only", 0)))
+        queryset = self.get_queryset
+        if assigned_only:
+            queryset = queryset.filter(recipe__isnull=False)
+
+        return queryset.filter(user=self.request.user).order_by("-name").distinct()
 
 
 class TagViewSet(BaseRecipeAttrViewSet):
